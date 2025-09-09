@@ -1,0 +1,18 @@
+#!/bin/bash
+
+#SNS Topic ARN and recipient email
+SNS_TOPIC_ARN="arn:aws:sns:ap-south-1:837279440306:disk_notify"
+RECIPIENT_EMAIL="adwaithnandanam@gmail.com"
+SUBJECT="Disk Usage Alert from $(hostname)"
+
+# Get disk usage details
+DISK_USAGE=$(df -h)
+#MESSAGE DETAILS
+    MESSAGE="Hello,\n\nHere is the Disk usage Report for server $(hostname):\n\n\$DISK_USAGE"
+
+    # === SNS Publish ===
+/usr/local/bin/aws sns publish \
+        --topic-arn "$SNS_TOPIC_ARN" \
+        --message "$MESSAGE" \
+        --subject "$SUBJECT"
+
