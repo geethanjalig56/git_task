@@ -15,4 +15,4 @@ DISK_USAGE=$(df -h)
         --topic-arn "$SNS_TOPIC_ARN" \
         --message "$MESSAGE" \
         --subject "$SUBJECT"
-
+HELLOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO FROM GEETHANJALI G
